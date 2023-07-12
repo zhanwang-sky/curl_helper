@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D93BFF242A5EAA3D00FE6696 /* libcurl.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D93BFF232A5EAA3D00FE6696 /* libcurl.4.dylib */; };
 		D97C328A2A5EA92900C1BAA6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D97C32892A5EA92900C1BAA6 /* main.cpp */; };
+		D9BD6B5F2A5EABB100C09F40 /* curl_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BD6B5D2A5EABB100C09F40 /* curl_helper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D93BFF232A5EAA3D00FE6696 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.4.dylib; path = /opt/homebrew/Cellar/curl/8.1.2_1/lib/libcurl.4.dylib; sourceTree = "<group>"; };
 		D97C32862A5EA92900C1BAA6 /* curl_helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = curl_helper; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97C32892A5EA92900C1BAA6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D9BD6B5D2A5EABB100C09F40 /* curl_helper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = curl_helper.cpp; sourceTree = "<group>"; };
+		D9BD6B5E2A5EABB100C09F40 /* curl_helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = curl_helper.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D93BFF242A5EAA3D00FE6696 /* libcurl.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D93BFF222A5EAA3D00FE6696 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D93BFF232A5EAA3D00FE6696 /* libcurl.4.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D97C327D2A5EA92900C1BAA6 = {
 			isa = PBXGroup;
 			children = (
 				D97C32882A5EA92900C1BAA6 /* curl_helper */,
 				D97C32872A5EA92900C1BAA6 /* Products */,
+				D93BFF222A5EAA3D00FE6696 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +72,17 @@
 		D97C32882A5EA92900C1BAA6 /* curl_helper */ = {
 			isa = PBXGroup;
 			children = (
+				D9BD6B5C2A5EAB9700C09F40 /* curl_helper */,
 				D97C32892A5EA92900C1BAA6 /* main.cpp */,
+			);
+			path = curl_helper;
+			sourceTree = "<group>";
+		};
+		D9BD6B5C2A5EAB9700C09F40 /* curl_helper */ = {
+			isa = PBXGroup;
+			children = (
+				D9BD6B5D2A5EABB100C09F40 /* curl_helper.cpp */,
+				D9BD6B5E2A5EABB100C09F40 /* curl_helper.hpp */,
 			);
 			path = curl_helper;
 			sourceTree = "<group>";
@@ -120,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D97C328A2A5EA92900C1BAA6 /* main.cpp in Sources */,
+				D9BD6B5F2A5EABB100C09F40 /* curl_helper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +265,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/curl/8.1.2_1/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/curl/8.1.2_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -247,6 +278,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/curl/8.1.2_1/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/curl/8.1.2_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
